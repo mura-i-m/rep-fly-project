@@ -1,0 +1,10 @@
+# ダウンロードしたコネクトームなど（fly-core/raw に約570MB）
+raw/
+*.part
+# ビルドで作られるもの
+*.vsix
+fly-completer/vscode/brain/
+fly-completer/experiments/out/
+node_modules/
+__pycache__/
+.DS_Store

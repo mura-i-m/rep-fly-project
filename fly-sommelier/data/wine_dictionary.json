@@ -1,0 +1,301 @@
+{
+ "_note": "ワインの香りを、ハエの受容体データ(DoOR)にある分子に置き換えるための辞書。数値は『その香りの目立ち具合』の目安(0〜1)で、実際の濃度ではない。名前はDoORの表記に合わせている。",
+ "base": {
+  "_label": "どのワインにも入っている土台の香り",
+  "ethanol": 1.0,
+  "acetic acid": 0.25,
+  "ethyl acetate": 0.3,
+  "3-methyl-butanol": 0.35,
+  "isopentyl acetate": 0.2,
+  "ethyl hexanoate": 0.2,
+  "ethyl octanoate": 0.2,
+  "phenethyl alcohol": 0.2,
+  "acetaldehyde": 0.1
+ },
+ "varieties": {
+  "sauvignon_blanc": {
+   "label": "ソーヴィニヨン・ブラン",
+   "color": "白",
+   "aroma": {
+    "2-isobutyl-3-methoxypyrazine": 0.9,
+    "Z3-hexenol": 0.6,
+    "1-hexanol": 0.4,
+    "ethyl hexanoate": 0.3,
+    "hexyl acetate": 0.3
+   }
+  },
+  "chardonnay": {
+   "label": "シャルドネ",
+   "color": "白",
+   "aroma": {
+    "isopentyl acetate": 0.4,
+    "ethyl hexanoate": 0.4,
+    "hexyl acetate": 0.3,
+    "2,3-butanedione": 0.5,
+    "gamma-decalactone": 0.2,
+    "4hydroxy-3-methoxybenzaldehyde": 0.2
+   }
+  },
+  "riesling": {
+   "label": "リースリング",
+   "color": "白",
+   "aroma": {
+    "linalool": 0.5,
+    "geraniol": 0.3,
+    "citral": 0.3,
+    "ethyl butyrate": 0.3,
+    "hexyl acetate": 0.3
+   }
+  },
+  "muscat": {
+   "label": "マスカット（モスカート）",
+   "color": "白",
+   "aroma": {
+    "linalool": 1.0,
+    "geraniol": 0.8,
+    "nerol": 0.5,
+    "alpha-terpineol": 0.4,
+    "beta-citronellol": 0.3
+   }
+  },
+  "gewurztraminer": {
+   "label": "ゲヴュルツトラミネール",
+   "color": "白",
+   "aroma": {
+    "geraniol": 0.8,
+    "beta-citronellol": 0.7,
+    "phenethyl alcohol": 0.6,
+    "linalool": 0.4,
+    "nerol": 0.3
+   }
+  },
+  "viognier": {
+   "label": "ヴィオニエ",
+   "color": "白",
+   "aroma": {
+    "gamma-decalactone": 0.6,
+    "linalool": 0.5,
+    "geraniol": 0.4,
+    "gamma-octalactone": 0.3
+   }
+  },
+  "koshu": {
+   "label": "甲州",
+   "color": "白",
+   "aroma": {
+    "limonene": 0.5,
+    "citral": 0.3,
+    "ethyl hexanoate": 0.3,
+    "hexyl acetate": 0.3,
+    "Z3-hexenol": 0.2
+   }
+  },
+  "pinot_grigio": {
+   "label": "ピノ・グリージョ",
+   "color": "白",
+   "aroma": {
+    "hexyl acetate": 0.5,
+    "isopentyl acetate": 0.3,
+    "limonene": 0.2,
+    "benzaldehyde": 0.2
+   }
+  },
+  "pinot_noir": {
+   "label": "ピノ・ノワール",
+   "color": "赤",
+   "aroma": {
+    "ethyl butyrate": 0.6,
+    "ethyl 2-methylbutanoate": 0.5,
+    "phenethyl alcohol": 0.4,
+    "benzaldehyde": 0.3,
+    "eugenol": 0.2
+   }
+  },
+  "cabernet_sauvignon": {
+   "label": "カベルネ・ソーヴィニヨン",
+   "color": "赤",
+   "aroma": {
+    "2-isobutyl-3-methoxypyrazine": 0.6,
+    "ethyl butyrate": 0.3,
+    "eugenol": 0.4,
+    "4-ethylguaiacol": 0.3,
+    "4hydroxy-3-methoxybenzaldehyde": 0.4
+   }
+  },
+  "merlot": {
+   "label": "メルロー",
+   "color": "赤",
+   "aroma": {
+    "ethyl butyrate": 0.5,
+    "ethyl hexanoate": 0.4,
+    "2-isobutyl-3-methoxypyrazine": 0.2,
+    "4hydroxy-3-methoxybenzaldehyde": 0.3,
+    "benzaldehyde": 0.2
+   }
+  },
+  "syrah": {
+   "label": "シラー（シラーズ）",
+   "color": "赤",
+   "aroma": {
+    "eugenol": 0.5,
+    "4-ethylphenol": 0.3,
+    "4-ethylguaiacol": 0.4,
+    "ethyl butyrate": 0.3
+   }
+  },
+  "grenache": {
+   "label": "グルナッシュ",
+   "color": "赤",
+   "aroma": {
+    "ethyl butyrate": 0.5,
+    "ethyl 2-methylbutanoate": 0.4,
+    "ethyl hexanoate": 0.4,
+    "benzaldehyde": 0.2
+   }
+  },
+  "tempranillo": {
+   "label": "テンプラニーリョ",
+   "color": "赤",
+   "aroma": {
+    "4hydroxy-3-methoxybenzaldehyde": 0.5,
+    "eugenol": 0.3,
+    "ethyl butyrate": 0.3,
+    "4-ethylguaiacol": 0.3
+   }
+  },
+  "nebbiolo": {
+   "label": "ネッビオーロ",
+   "color": "赤",
+   "aroma": {
+    "phenethyl alcohol": 0.6,
+    "phenethyl acetate": 0.3,
+    "benzaldehyde": 0.3,
+    "eugenol": 0.3
+   }
+  },
+  "sangiovese": {
+   "label": "サンジョヴェーゼ",
+   "color": "赤",
+   "aroma": {
+    "benzaldehyde": 0.5,
+    "ethyl butyrate": 0.4,
+    "ethyl 2-methylbutanoate": 0.3,
+    "eugenol": 0.2
+   }
+  },
+  "muscat_bailey_a": {
+   "label": "マスカット・ベーリーA",
+   "color": "赤",
+   "aroma": {
+    "4-hydroxy-5-methyl-3-furanone": 0.6,
+    "ethyl butyrate": 0.5,
+    "ethyl 2-methylbutanoate": 0.3,
+    "linalool": 0.2
+   }
+  },
+  "sparkling": {
+   "label": "スパークリング（シャンパーニュ製法）",
+   "color": "泡",
+   "aroma": {
+    "benzaldehyde": 0.3,
+    "2,3-butanedione": 0.3,
+    "isopentyl acetate": 0.4,
+    "ethyl hexanoate": 0.4,
+    "ethyl octanoate": 0.4
+   }
+  }
+ },
+ "descriptors": {
+  "バナナ": {
+   "isopentyl acetate": 1.0
+  },
+  "青りんご": {
+   "hexyl acetate": 0.7,
+   "E2-hexenal": 0.4,
+   "ethyl hexanoate": 0.4
+  },
+  "洋なし": {
+   "hexyl acetate": 1.0
+  },
+  "パイナップル": {
+   "ethyl butyrate": 0.7,
+   "ethyl hexanoate": 0.7
+  },
+  "いちご": {
+   "ethyl butyrate": 0.6,
+   "4-hydroxy-5-methyl-3-furanone": 0.6,
+   "ethyl 2-methylbutanoate": 0.4
+  },
+  "チェリー": {
+   "benzaldehyde": 0.7,
+   "ethyl butyrate": 0.4
+  },
+  "桃・あんず": {
+   "gamma-decalactone": 0.9,
+   "gamma-octalactone": 0.5
+  },
+  "柑橘": {
+   "limonene": 0.8,
+   "citral": 0.6
+  },
+  "ライチ": {
+   "geraniol": 0.7,
+   "beta-citronellol": 0.5
+  },
+  "マスカット": {
+   "linalool": 0.9,
+   "geraniol": 0.5
+  },
+  "バラ": {
+   "phenethyl alcohol": 0.9,
+   "geraniol": 0.5,
+   "beta-citronellol": 0.5
+  },
+  "白い花": {
+   "linalool": 0.7,
+   "nerol": 0.4,
+   "alpha-terpineol": 0.3
+  },
+  "ハチミツ": {
+   "phenylacetaldehyde": 0.8,
+   "phenethyl acetate": 0.4
+  },
+  "青草・ハーブ": {
+   "Z3-hexenol": 0.8,
+   "1-hexanol": 0.5,
+   "E2-hexenal": 0.4
+  },
+  "ピーマン": {
+   "2-isobutyl-3-methoxypyrazine": 1.0
+  },
+  "ミント・ユーカリ": {
+   "1,8-cineole": 1.0
+  },
+  "バター": {
+   "2,3-butanedione": 1.0
+  },
+  "アーモンド・ナッツ": {
+   "benzaldehyde": 0.9
+  },
+  "バニラ・樽": {
+   "4hydroxy-3-methoxybenzaldehyde": 0.9,
+   "eugenol": 0.3
+  },
+  "クローブ・スパイス": {
+   "eugenol": 0.9
+  },
+  "スモーク": {
+   "4-ethylguaiacol": 0.9
+  },
+  "なめし革": {
+   "4-ethylphenol": 0.9
+  },
+  "きのこ・土": {
+   "1-octen-3-ol": 0.9
+  },
+  "カビ・湿った土": {
+   "geosmin": 0.8,
+   "2-methylisoborneol": 0.5
+  }
+ }
+}

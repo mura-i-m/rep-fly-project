@@ -1,0 +1,1 @@
+-r ../fly-core/requirements.txt

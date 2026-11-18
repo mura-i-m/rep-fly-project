@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ハエのワインソムリエ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 画面いっぱいのテーブル（ハエ） -->
+<div id="scene"><div class="loading">ハエを読み込み中…</div></div>
+
+<!-- 左上：タイトルとレベル -->
+<header id="hud-title">
+  <h1>ハエのワインソムリエ</h1>
+  <div id="level" class="badge"></div>
+</header>
+
+<!-- 上の真ん中：ページの切り替え -->
+<div id="mode" role="tablist">
+  <button data-mode="train" role="tab"></button>
+  <button data-mode="test" role="tab"></button>
+</div>
+
+<!-- 左の道具 -->
+<nav id="hud-tools">
+  <button data-drawer="history" title="教えたワイン"></button>
+  <button data-drawer="lab" title="実験"></button>
+  <button data-drawer="about" title="この脳について"></button>
+  <button id="view-reset" title="視点を戻す"></button>
+</nav>
+
+<!-- 右上：脳のX線窓（嗅いだ瞬間に全画面へ） -->
+<div id="brain-win" class="mini">
+  <div class="win-bar">
+    <span class="win-title">ハエの脳<small>雄CNSコネクトーム</small></span>
+    <button id="brain-size" title="大きくする"></button>
+  </div>
+  <div id="brain-pane"><div class="loading">脳を読み込み中…</div></div>
+  <div id="legend">
+    <span><i style="background:#d98cff"></i>投射ニューロン</span>
+    <span><i style="background:#ffd44d"></i>ケニオン細胞</span>
+    <span><i style="background:#ff6b5a"></i>近づく出力</span>
+    <span><i style="background:#5aa8ff"></i>避ける出力</span>
+    <span><i style="background:#73ff8c"></i>ごほうびDA</span>
+    <span><i style="background:#ff4fa3"></i>罰DA</span>
+  </div>
+  <div id="brain-step"></div>
+</div>
+
+<!-- 下の真ん中：いま起きていること -->
+<div id="caption"></div>
+
+<!-- テストのあとの答え合わせ -->
+<div id="answer" class="hidden">
+  <p class="q"></p>
+  <div id="pred"></div>
+  <p class="ask">あなたの好みと合っていましたか？</p>
+  <div class="rate">
+    <button data-ok="1"></button>
+    <button data-ok="0"></button>
+  </div>
+  <button id="to-train" class="primary hidden"></button>
+  <button id="skip" class="link">答えずに次へ</button>
+</div>
+
+<!-- 下：ボトル棚 -->
+<footer id="shelf">
+  <div class="shelf-head"><span id="shelf-main"></span><span class="hint" id="shelf-hint"></span></div>
+  <div id="bottles"></div>
+</footer>
+
+<!-- 香りを足すパネル -->
+<div id="aroma" class="pop hidden">
+  <div class="pop-head"><b id="aroma-title"></b><button class="close" title="閉じる"></button></div>
+  <label class="field">ワインの名前（なくてもOK）<input id="aroma-name" type="text" placeholder="例：〇〇ワイナリー 2022"></label>
+  <div class="field">ラベルやお店の説明にある香り<div id="aroma-chips" class="chips"></div></div>
+  <div id="aroma-actions"></div>
+</div>
+
+<!-- 左から出る引き出し -->
+<aside id="drawer" class="hidden">
+  <div class="pop-head"><b id="drawer-title"></b><button class="close" title="閉じる"></button></div>
+  <section data-panel="history">
+    <h3>しつけた記録</h3>
+    <ul id="history-train" class="history"></ul>
+    <h3>テストの記録</h3>
+    <ul id="history-test" class="history"></ul>
+  </section>
+  <section data-panel="lab">
+    <h3>しつけのたびのドーパミンの量</h3>
+    <canvas id="c-da" height="150"></canvas>
+    <p class="muted">砂糖をあげたときに、ごほうび担当のドーパミン細胞(PAM)がどれだけ発火したか。同じ匂いでしつけを重ねて予想が当たるようになると減っていきます（＝報酬予測誤差）。電気ショックのときは罰担当(PPL1)の量をピンクで表示。</p>
+    <h3>実験スイッチ</h3>
+    <label class="switch"><input type="checkbox" id="x-glu"> MBON→ドーパミン細胞のグルタミン酸を「興奮」として扱う</label>
+    <p class="muted">オフにすると「抑制」として扱います。どちらが正しいかはまだわかっていません。</p>
+    <label class="switch"><input type="checkbox" id="x-random"> PN→ケニオン細胞の配線をランダムにする</label>
+    <p class="muted">本数と重みはそのままに、つながる先だけシャッフルします。どちらも教えた履歴で学び直します。</p>
+    <p id="x-stats" class="muted"></p>
+  </section>
+  <section data-panel="about">
+    <p id="x-source" class="muted"></p>
+    <p class="muted">ハエの体：NeuroMechFly v2（X線CTから作られた3Dモデル）。歩き方は本物のハエの関節角度の記録を再生。嗅ぐ・味見・飲む・飛び立つは手で付けた動きです。</p>
+    <p class="muted">このアプリの予想は遊びです。ハエは人間とは違う鼻で嗅いでいます。</p>
+    <button id="x-reset" class="danger">教えた履歴をすべて消す</button>
+  </section>
+</aside>
+
+<script src="icons.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<script src="data/app_data.js"></script>
+<script src="brain.js"></script>
+<script src="viewer3d.js"></script>
+<script src="flyscene.js"></script>
+<script src="app.js"></script>
+<script src="../../fly-core/data/scene3d.js" onload="window.startViewer && window.startViewer()"></script>
+<script src="../../fly-core/data/fly3d.js" onload="window.startFly && window.startFly()"></script>
+</body>
+</html>

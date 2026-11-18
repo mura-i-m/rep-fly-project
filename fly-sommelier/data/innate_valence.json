@@ -1,0 +1,12 @@
+{
+  "_note": "ハエの生まれつきの好き嫌いが行動実験ではっきりしている糸球体だけに印を付ける（+1 好き、−1 嫌い）。ここから先（PN→側角）は本物の配線で伝える。",
+  "glomeruli": {
+    "DM1":  {"valence":  1.0, "why": "酢の匂いへの誘引に必要（Semmelhack & Wang, Nature 2009）"},
+    "VA2":  {"valence":  1.0, "why": "酢の匂いへの誘引に必要（Semmelhack & Wang, Nature 2009）"},
+    "DM5":  {"valence": -0.5, "why": "高濃度の匂いを避ける行動に関わる（Semmelhack & Wang, Nature 2009）"},
+    "DA2":  {"valence": -1.0, "why": "カビ臭のジオスミンを避ける専用の経路（Stensmyr et al., Cell 2012）"},
+    "V":    {"valence": -1.0, "why": "二酸化炭素を避ける（Suh et al., Nature 2004）"},
+    "DC4":  {"valence": -1.0, "why": "酸を避ける（Ai et al., Nature 2010）"},
+    "DL4":  {"valence": -1.0, "why": "寄生バチの匂いを避ける（Ebrahim et al., PLoS Biol 2015）"}
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "fly-completer",
+  "displayName": "ハエの補完 (Fly Completer)",
+  "description": "本物のハエの脳の配線（雄CNSコネクトーム）のキノコ体が、Pythonの単語を補完します。考えているあいだ、ハエが前脚でタッピングします。",
+  "version": "0.1.0",
+  "publisher": "mako-local",
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "main": "./extension.js",
+  "activationEvents": ["onLanguage:python"],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "flyCompleter", "title": "ハエの補完", "icon": "media/fly-icon.svg" }
+      ]
+    },
+    "views": {
+      "flyCompleter": [
+        { "type": "webview", "id": "flyCompleter.view", "name": "ハエ" }
+      ]
+    },
+    "commands": [
+      { "command": "flyCompleter.show", "title": "ハエの補完: ハエを見る" },
+      { "command": "flyCompleter.reset", "title": "ハエの補完: 自分で覚えたことを忘れさせる" },
+      { "command": "flyCompleter.toggle", "title": "ハエの補完: オン／オフ" }
+    ],
+    "configuration": {
+      "title": "ハエの補完",
+      "properties": {
+        "flyCompleter.enabled": { "type": "boolean", "default": true, "description": "補完をする" },
+        "flyCompleter.thinkingTime": { "type": "number", "default": 800, "minimum": 0, "description": "ハエが考える（タッピングする）時間 ms" },
+        "flyCompleter.learnWhileTyping": { "type": "boolean", "default": true, "description": "打ち終えた単語から、その場で学習する" }
+      }
+    }
+  }
+}
